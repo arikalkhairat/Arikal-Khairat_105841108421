@@ -2,6 +2,28 @@ import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 
 const App = () => {
+  const ButtonCustom = ({ color, text }) => {
+    return (
+      <View style={{
+        backgroundColor: color,
+        width: 100, height: 45,
+        justifyContent: 'center',
+        borderRadius: 20,
+        marginRight: 30,
+        marginLeft: 20
+    }}>
+      <Text style={{
+        fontSize: 17, 
+        color: 'white',
+        fontWeight: 'bold',
+        textAlign: 'center'
+        
+      }}>{text}
+      </Text>
+      </View>
+
+    )
+  } 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Text style={{
@@ -26,7 +48,7 @@ const App = () => {
         fontSize: 17,
         color: 'lightblue',
         fontWeight: 'bold',
-        marginTop: 165
+        marginTop: 130
       }}>Or</Text>
        
     <View style={{
@@ -36,42 +58,8 @@ const App = () => {
       flexDirection:'row',
       marginBottom: 160
     }}>
-      <View style={{
-        backgroundColor: 'fuchsia', width: 100, height: 45,
-        justifyContent: 'center',
-        borderRadius: 20,
-        marginRight: 20
-    }}>
-  
-      <Text style={{
-        fontSize: 17, 
-        color: 'white',
-        fontWeight: 'bold',
-        textAlign: 'center'
-        
-      }}> 
-      Sign In
-      </Text>
-      </View>
-      <View style={{
-        backgroundColor: 'white', width: 100, height: 45,
-        justifyContent: 'center',
-        borderRadius: 20,
-        marginLeft: 20,
-        borderColor: 'fuchsia',
-        borderWidth: 5
-    }}>
-  
-      <Text style={{
-        fontSize: 17, 
-        color: 'fuchsia',
-        fontWeight: 'bold',
-        textAlign: 'center'
-        
-      }}> 
-      Sign Up
-      </Text>
-      </View>
+      <ButtonCustom color= 'fuchsia' text='Sign In' />
+      <ButtonCustom color= 'fuchsia' text='Sign Up' />
       
       </View>
       </View>
