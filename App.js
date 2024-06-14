@@ -1,51 +1,36 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, TextInput } from 'react-native'
 import React from 'react'
 import ButtonCustom from './component/button/button'
 
 const App = () => { 
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text style={{
-        fontSize: 20, 
-        color: '#f8abeb',
-        fontWeight: 'bold',
-        textAlign: 'center',
-        marginTop: 100
-      }}>
-        Selamat Datang! {'\n'} Duduk Santai Dan Mulai Scroll
-      </Text>
-      <Image 
-        source={require('./assets/img.jpg')}
-        style={{
+  const TextInputCustom = ({ name, color }) => {
+    return(
+      <TextInput
+      placeholder={`Masukkan ${name}`}
+      style={{
+        height: 40,
         width: 200,
-        height: 200,
-        marginTop: 50,
-        borderRadius: 10
-      }}>
-      </Image>
-      <Text style={{
-        fontSize: 17,
-        color: 'lightblue',
-        fontWeight: 'bold',
-        marginTop: 130
-      }}>Or</Text>
-       
+        borderColor: 'green',
+        borderWidth: 1,
+        padding: 10,
+        borderRadius: 10,
+        marginBottom: 10,
+        color: color,
+      }}
+      />
+    )
+  }
+  return (
     <View style={{
-      flex: 1,
-      alignItems: 'flex-end', //BARIS
-      justifyContent: 'center', //KOLOM
-      flexDirection:'row',
-      marginBottom: 160
+      flex:1,
+      justifyContent: 'center',
+      alignItems: 'center',
+
     }}>
-      <ButtonCustom color= 'fuchsia' text='Sign In' />
-      <ButtonCustom color= 'fuchsia' text='Sign Up' />
-      
-      </View>
-      </View>
-    
-    
-    
-  )
+     <TextInputCustom name="Username" color="blue" />
+     <TextInputCustom name="Password" color="black" />
+    </View>
+  )  
 }
 
 export default App
