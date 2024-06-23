@@ -4,11 +4,13 @@ import React from 'react'
       return (
         <View style={{
           backgroundColor: color,
-          width: 100, height: 45,
+          width: 300, height: 50,
           justifyContent: 'center',
+          alignItems: 'center',
           borderRadius: 20,
-          marginRight: 30,
-          marginLeft: 20
+          marginTop:20,
+          marginBottom:100
+          // marginLeft: 10
       }}>
         <Text style={{
           fontSize: 17, 
