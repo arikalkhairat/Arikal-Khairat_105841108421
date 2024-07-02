@@ -19,10 +19,11 @@ const Forgot = () => {
       <Text style={{
       fontSize: 35,
       color: 'black',
-      fontWeight: 'bold'
+      fontFamily: 'MetroBold'
+      // fontWeight: 'bold'
     
     }}>
-      {Forgot}
+      Forgot Password
     </Text>   
     </View>
     <View style={{ alignItems:'center', justifyContent:'center'}}>

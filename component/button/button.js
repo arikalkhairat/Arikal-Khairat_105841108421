@@ -9,14 +9,15 @@ import React from 'react'
           alignItems: 'center',
           borderRadius: 20,
           marginTop:20,
-          marginBottom:100
+          marginBottom:50,
           // marginLeft: 10
       }}>
         <Text style={{
           fontSize: 17, 
           color: 'white',
-          fontWeight: 'bold',
-          textAlign: 'center'
+          // fontWeight: 'bold',
+          textAlign: 'center',
+          fontFamily: 'MetroSemiBold'
           
         }}>{text}
         </Text>

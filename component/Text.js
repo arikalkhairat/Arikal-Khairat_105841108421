@@ -12,7 +12,8 @@ const CustomText =({ text, color, fontSize }) =>{
     }}>
       <Text style={{
       color: color,
-      fontSize: fontSize
+      fontSize: fontSize,
+      fontFamily: 'MetroMedium'
     
     }}>
       {text}

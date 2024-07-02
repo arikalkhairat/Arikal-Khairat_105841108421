@@ -19,7 +19,8 @@ const SignUp = () => {
       <Text style={{
       fontSize: 35,
       color: '#951332',
-      fontWeight: 'bold'
+      fontFamily: 'MetroBold'
+      // fontWeight: 'bold'
     
     }}>
       SignUp
@@ -34,7 +35,7 @@ const SignUp = () => {
      <CustomText text="Already have an account?" />
      </View>
      <ButtonCustom color="#CC3E5F" text="SignUp"/>
-     <CustomText text="Or sign up with social account" style={{ marginBottom:50}} />
+     <CustomText text="Or sign up with social account" style={{ marginBottom:30}} />
 
      <View style={{
       flexDirection:'row'}}>

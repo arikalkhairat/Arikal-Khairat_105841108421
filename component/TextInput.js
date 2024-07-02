@@ -28,6 +28,7 @@ const TextInputCustom = ({ name, color, label }) => {
         color: color,
         justifyContent: 'center',
         alignItems: 'center',
+        fontFamily: 'MetroMedium'
       }}
       />
       // </View>
