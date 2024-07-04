@@ -1,11 +1,24 @@
+// In App.js in a new project
+
+import * as React from 'react';
+import { View, Text, Button } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import LoginPage from './LoginPage';
 import { useFonts } from 'expo-font';
-import { Text, View } from 'react-native';
-import Login from './Login';
-import SignUp from './signUp';
-import ForgotPass from './ForgotPass';
 
+function HomeScreen({ navigation}) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+      <Button title="Ke Hal Login" onPress={() => navigation.navigate('LoginPage')} />
+    </View>
+  );
+}
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+
+function App() {
   const [dapatFont] = useFonts({
     'MetroBlack': require('./assets/font/Metropolis-Black.otf'),
     'MetroBold': require('./assets/font/Metropolis-Bold.otf'),
@@ -19,17 +32,14 @@ export default function App() {
   }
 
   return (
-    <View style={{ flex: 1 }}>
-      {/* <Login /> */}
-      <SignUp />
-      {/* <ForgotPass /> */}
-
-      {/* <Text style= {{ fontFamily: 'MetroBlack'}}>Font Metropolis Black</Text>
-      <Text style= {{ fontFamily: 'MetroBold'}}>Font Metropolis Bold</Text>
-      <Text style= {{ fontFamily: 'MetroLight'}}>Font Metropolis Light</Text>
-      <Text style= {{ fontFamily: 'MetroMedium'}}>Font Metropolis Medium</Text>
-      <Text style= {{ fontFamily: 'MetroSemiBold'}}>Font Metropolis Semi Bold</Text> */}
-      {/* <Text>Font Biasa</Text> */}
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name='LoginPage' component={LoginPage} options={ 
+          HeaderShown: false} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
+
+export default App;
