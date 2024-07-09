@@ -1,7 +1,10 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
-    const ButtonCustom = ({ color, text }) => {
+
+
+    const ButtonCustom = ({ color, text, onPress }) => {
       return (
+        <TouchableOpacity onPress={onPress} >
         <View style={{
           backgroundColor: color,
           width: 300, height: 50,
@@ -9,7 +12,7 @@ import React from 'react'
           alignItems: 'center',
           borderRadius: 20,
           marginTop:20,
-          marginBottom:50,
+          marginBottom:80,
           // marginLeft: 10
       }}>
         <Text style={{
@@ -22,7 +25,7 @@ import React from 'react'
         }}>{text}
         </Text>
         </View>
-  
+        </TouchableOpacity>
       )
     } 
     export default ButtonCustom

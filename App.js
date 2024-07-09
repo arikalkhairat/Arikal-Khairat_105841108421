@@ -1,20 +1,13 @@
-// In App.js in a new project
-
 import * as React from 'react';
 import { View, Text, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LoginPage from './LoginPage';
+import signUp from './signUp';
+import ForgotPass from './ForgotPass';
 import { useFonts } from 'expo-font';
 
-function HomeScreen({ navigation}) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      <Button title="Ke Hal Login" onPress={() => navigation.navigate('LoginPage')} />
-    </View>
-  );
-}
+
 
 const Stack = createNativeStackNavigator();
 
@@ -34,9 +27,11 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name='LoginPage' component={LoginPage} options={ 
-          HeaderShown: false} />
+        <Stack.Screen name="signUp" component={signUp} />
+        <Stack.Screen name="LoginPage" component={LoginPage} />
+        <Stack.Screen name='ForgotPass' component={ForgotPass} />
+        
+        
       </Stack.Navigator>
     </NavigationContainer>
   );

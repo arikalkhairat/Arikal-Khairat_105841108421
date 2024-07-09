@@ -1,13 +1,15 @@
-import { StyleSheet, Text, View, Image, TextInput } from 'react-native'
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native'
 import React from 'react'
 
-const CustomText =({ text, color, fontSize }) =>{
+const CustomText =({ text, color, fontSize, onPress }) =>{
     return(
+      <TouchableOpacity onPress={onPress}>
+      
       <View style={{
       justifyContent: 'center',
       alignItems: 'center',
       marginHorizontal:29,
-      marginBottom:20
+      marginBottom:2
       
     }}>
       <Text style={{
@@ -19,6 +21,7 @@ const CustomText =({ text, color, fontSize }) =>{
       {text}
     </Text>   
     </View>
+    </TouchableOpacity>
     )
 }
 

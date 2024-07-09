@@ -4,15 +4,16 @@ import ButtonCustom from './component/button/button'
 import TextInputCustom from './component/TextInput'
 import CustomText from './component/Text'
 import Icon from './component/Icon'
+import { useNavigation } from '@react-navigation/native';
 
-
-const SignUp = () => { 
+const SignUp = () => {
+  const navigation = useNavigation(); 
   return (
     <View style={{ flex:1, backgroundColor:'#FAEBE5'}}>
       <View style={{
       justifyContent: 'flex-start',
       alignItems: 'flex-start',
-      marginTop: 100,
+      marginTop: 20,
       marginLeft: 30,
       marginBottom:50
     }}>
@@ -32,20 +33,18 @@ const SignUp = () => {
      <TextInputCustom name="email" color="#B7919A" label="Nama"/>
      <TextInputCustom name="Password" color="#B7919A" label="Nama" />
      <View style={{marginLeft:150}}>
-     <CustomText text="Already have an account?" />
+     <CustomText text="Already have an account?" onPress={() => navigation.navigate('LoginPage')}/>
      </View>
-     <ButtonCustom color="#CC3E5F" text="SignUp"/>
-     <CustomText text="Or sign up with social account" style={{ marginBottom:30}} />
+     <ButtonCustom color="#CC3E5F" text="SignUp" onPress={() => navigation.navigate('LoginPage')} />
+     <CustomText text="Or sign up with social account" onPress={() => navigation.navigate('LoginPage')} />
 
-     <View style={{
-      flexDirection:'row'}}>
-      <Icon imageSource={require('./assets/go.png')} />
-      <Icon imageSource={require('./assets/fb.png')} />
+     <View style={{ flexDirection:'row'}}>
+      <Icon imageSource={require('./assets/go.png')} onPress={() => navigation.navigate('LoginPage')} />
+      <Icon imageSource={require('./assets/fb.png')} onPress={() => navigation.navigate('LoginPage')} />
      </View>
      
     </View>
     </View>
   )  
 }
-
 export default SignUp
