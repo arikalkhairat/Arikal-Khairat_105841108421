@@ -1,37 +1,80 @@
 import * as React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, Image, TouchableOpacity, TouchableOpacityBase } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LoginPage from './LoginPage';
-import signUp from './signUp';
-import ForgotPass from './ForgotPass';
-import { useFonts } from 'expo-font';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import HomeAktif from './assets/Icon/HomeAktif.jpg';
+import HomeInaktif from './assets/Icon/HomeInaktif.jpg';
+import Shop from './assets/Icon/ShopAktif.jpg';
+import ShopInaktif from './assets/Icon/ShopInaktif.jpg';
+import SignUp from './signUp';
 
+const Tab = createBottomTabNavigator();
+function MyTabs() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          headerShown: false, tabBarIcon: ({ focused }) => (
+            <Image
+              source={focused ? HomeAktif : HomeInaktif}
+              style={{ width: 40, height: 40 }}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="signUp"
+        component={SignUp}
+        options={{
+          headerShown: false, tabBarIcon: ({ focused }) => (
+            <Image
+              source={focused ?  HomeInaktif : HomeAktif}
+              style={{ width: 40, height: 40 }}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Login"
+        component={LoginPage}
+        options={{
+          headerShown: false, tabBarIcon: ({ focused }) => (
+            <Image
+              source={focused ? Shop : ShopInaktif}
+              style={{ width: 40, height: 40 }}
+            />
+          ),
+        }}
+      />
+    </Tab.Navigator>
+  );
+}
 
+function HomeScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+      <Button
+        title="Go to Login"
+        onPress={() => navigation.navigate('Login')}
+      />
+    </View>
+  );
+}
 
 const Stack = createNativeStackNavigator();
 
 function App() {
-  const [dapatFont] = useFonts({
-    'MetroBlack': require('./assets/font/Metropolis-Black.otf'),
-    'MetroBold': require('./assets/font/Metropolis-Bold.otf'),
-    'MetroLight': require('./assets/font/Metropolis-Light.otf'),
-    'MetroMedium': require('./assets/font/Metropolis-Medium.otf'),
-    'MetroSemiBold': require('./assets/font/Metropolis-SemiBold.otf'),
-  });
-
-  if(!dapatFont) {
-    return <Text>Font Tidak ditemukan</Text>
-  }
-
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="signUp" component={signUp} />
-        <Stack.Screen name="LoginPage" component={LoginPage} />
-        <Stack.Screen name='ForgotPass' component={ForgotPass} />
-        
-        
+        <Stack.Screen name="Home" component={MyTabs} />
+        <Stack.Screen name="Login" component={LoginPage} />
+        <Stack.Screen name="SignUp" component={SignUp} />
       </Stack.Navigator>
     </NavigationContainer>
   );
