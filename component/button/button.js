@@ -7,12 +7,14 @@ import React from 'react'
         <TouchableOpacity onPress={onPress} >
         <View style={{
           backgroundColor: color,
-          width: 300, height: 50,
+          width: 300, 
+          height: 50,
           justifyContent: 'center',
           alignItems: 'center',
           borderRadius: 20,
           marginTop:20,
-          marginBottom:80,
+          
+      
           // marginLeft: 10
       }}>
         <Text style={{

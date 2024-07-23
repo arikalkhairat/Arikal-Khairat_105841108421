@@ -1,8 +1,8 @@
-import { View, ImageBackground , Image} from 'react-native'
+import { View, ImageBackground } from 'react-native'
 import ButtonCustom from './component/button/button'
 import React from 'react'
 
-const HomeScreen = () => {
+const Home = () => {
   return (
     <ImageBackground 
     source={require('./assets/Ag.jpg')}
@@ -14,4 +14,4 @@ const HomeScreen = () => {
     </ImageBackground>
   )  
 }
-export default HomeScreen;
+export default Home;

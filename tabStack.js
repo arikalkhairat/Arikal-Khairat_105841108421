@@ -51,8 +51,6 @@ function App() {
         <Stack.Screen name="signUp" component={signUp} />
         <Stack.Screen name="LoginPage" component={LoginPage} />
         <Stack.Screen name='ForgotPass' component={ForgotPass} />
-        
-        
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -36,10 +36,11 @@ const Login = () => {
      <View style={{marginLeft:150}}>
      <CustomText text="Forgot your password?" onPress={() => navigation.navigate('ForgotPass')} />
      </View>
-     <View style={{ marginBottom: 10 }}>
-     <ButtonCustom color="#CC3E5F" text="Login" onPress={() => navigation.navigate('ForgotPass')} />
+     <ButtonCustom color="#CC3E5F" text="Login" onPress={() => navigation.navigate('VisualSearch')} />
+     <View style={{ marginTop:100 }}>
+      <CustomText text="Or Login with social account" />
      </View>
-     <CustomText text="Or Login with social account" />
+    
      
      <View style={{
       flexDirection:'row', 

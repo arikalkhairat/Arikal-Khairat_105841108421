@@ -32,10 +32,12 @@ const SignUp = () => {
      <TextInputCustom name="Username" color="#B7919A" label="Nama" />
      <TextInputCustom name="email" color="#B7919A" label="Nama"/>
      <TextInputCustom name="Password" color="#B7919A" label="Nama" />
-     <View style={{marginLeft:150}}>
+     <View style={{marginLeft: 130}}>
      <CustomText text="Already have an account?" onPress={() => navigation.navigate('LoginPage')}/>
      </View>
-     <ButtonCustom color="#CC3E5F" text="SignUp" onPress={() => navigation.navigate('LoginPage')} />
+     <View style={{ marginBottom:100}}>
+     <ButtonCustom color="#CC3E5F" text="SignUp" onPress={() => navigation.navigate('LoginPage')} /> 
+     </View>
      <CustomText text="Or sign up with social account" onPress={() => navigation.navigate('LoginPage')} />
 
      <View style={{ flexDirection:'row'}}>
